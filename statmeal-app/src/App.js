@@ -63,12 +63,6 @@ class App extends Component {
                   </p>
               </div>
           );
-      } else {
-          return (
-              <div className="App-basic">
-                  <h4>Select a file first and then press the Upload button</h4>
-              </div>
-          );
       }
   };
 
@@ -76,7 +70,7 @@ class App extends Component {
       return (
           <div className="App">
             <header className="App-header">
-              <p>StatMeal</p>
+              <h1>StatMeal</h1>
               <p className="App-basic">Upload spreadsheet file</p>
             </header>
               <div className="App-file">
