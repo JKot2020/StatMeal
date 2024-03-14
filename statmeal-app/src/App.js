@@ -71,8 +71,8 @@ class App extends Component {
           <div className="App">
             <header className="App-header">
               <h1>StatMeal</h1>
-              <p className="App-basic">Upload spreadsheet file</p>
             </header>
+            <p className="App-basic">Upload spreadsheet file</p>
               <div className="App-file">
                   <input
                       type="file"
