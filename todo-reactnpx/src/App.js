@@ -8,7 +8,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { Component } from "react"; 
-import "bootstrap/dist/css/bootstrap.css"; 
+import "bootstrap/dist/css/bootstrap.css";
+import axios from "axios";
 import Container from "react-bootstrap/Container"; 
 import Row from "react-bootstrap/Row"; 
 import Col from "react-bootstrap/Col"; 
