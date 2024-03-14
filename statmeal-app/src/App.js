@@ -46,6 +46,11 @@ class App extends Component {
       if (this.state.selectedFile) {
           return (
               <div className="App-file-desc">
+                <button
+                className="chooseFileButton"
+                onClick={this.onFileUpload}>
+                    <p>Upload</p>
+                </button>
                   <h2>File Details:</h2>
                   <p>
                       File Name:{" "}
@@ -80,11 +85,6 @@ class App extends Component {
                     onChange={this.onFileChange}
                   />
                   <br></br>
-                  <button
-                    className="chooseFileButton"
-                    onClick={this.onFileUpload}>
-                      <p>Upload</p>
-                  </button>
               </div>
               {this.fileData()}
           </div>
