@@ -1,7 +1,6 @@
 // Filename - App.js
 // Author - Jason Kotowski
 
-import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
 import React, { Component } from "react";
