@@ -34,3 +34,11 @@
   font-size: calc(14px + 2vmin);
   color: white;
 }
+
+.chooseFileButton {
+  background-color: black;
+  color: white;
+  font-family: "Lucida Console";
+  border: 2px solid rgb(107, 221, 255);
+  border-radius: 8px;
+}

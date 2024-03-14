@@ -75,11 +75,15 @@ class App extends Component {
             <p className="App-basic">Upload spreadsheet file</p>
               <div className="App-file">
                   <input
-                      type="file"
-                      onChange={this.onFileChange}
+                    className="chooseFileButton"
+                    type="file"
+                    onChange={this.onFileChange}
                   />
-                  <button onClick={this.onFileUpload}>
-                      <p>Upload!</p>
+                  <br></br>
+                  <button
+                    className="chooseFileButton"
+                    onClick={this.onFileUpload}>
+                      <p>Upload</p>
                   </button>
               </div>
               {this.fileData()}
