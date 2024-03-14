@@ -45,7 +45,7 @@ class App extends Component {
   fileData = () => {
       if (this.state.selectedFile) {
           return (
-              <div>
+              <div className="App-basic">
                   <h2>File Details:</h2>
                   <p>
                       File Name:{" "}
@@ -67,7 +67,7 @@ class App extends Component {
           return (
               <div className="App">
                   <h4 className="App-basic">
-                      Select a file and press the Upload button
+                      Select a file first and then press the Upload button
                   </h4>
               </div>
           );
