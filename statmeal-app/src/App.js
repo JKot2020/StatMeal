@@ -45,7 +45,7 @@ class App extends Component {
   fileData = () => {
       if (this.state.selectedFile) {
           return (
-              <div className="App-basic">
+              <div className="App-file-desc">
                   <h2>File Details:</h2>
                   <p>
                       File Name:{" "}
