@@ -1,3 +1,7 @@
+// App.js
+// Main file for StatMeal application
+// Author: Jason Kotowski
+
 import './App.css';
 import axios from "axios";
 
