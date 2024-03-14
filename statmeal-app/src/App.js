@@ -1,3 +1,6 @@
+// Filename - App.js
+// Author - Jason Kotowski
+
 import logo from './logo.svg';
 import './App.css';
 
