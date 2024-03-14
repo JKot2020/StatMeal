@@ -24,6 +24,7 @@ class App extends Component {
   onFileUpload = () => {
       // Create an object of formData
       const formData = new FormData();
+      console.log("Created object of file");
 
       // Update the formData object
       formData.append(
@@ -38,6 +39,7 @@ class App extends Component {
       // Request made to the backend api
       // Send formData object
       axios.post("api/uploadfile", formData);
+      console.log("Sent formData object");
   };
 
   // File content to be displayed after
