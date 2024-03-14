@@ -65,10 +65,8 @@ class App extends Component {
           );
       } else {
           return (
-              <div className="App">
-                  <h4 className="App-basic">
-                      Select a file first and then press the Upload button
-                  </h4>
+              <div className="App-basic">
+                  <h4>Select a file first and then press the Upload button</h4>
               </div>
           );
       }
