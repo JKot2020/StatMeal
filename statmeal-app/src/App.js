@@ -75,7 +75,7 @@ class App extends Component {
       return (
           <div className="App">
             <header className="App-header">
-              <h1>StatMeal</h1>
+              <title>StatMeal</title>
             </header>
             <p className="App-basic">Upload spreadsheet file</p>
               <div className="App-file">
