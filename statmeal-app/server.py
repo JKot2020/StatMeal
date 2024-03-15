@@ -3,7 +3,7 @@
 
 from distutils.log import debug 
 from fileinput import filename 
-from flask import *
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
