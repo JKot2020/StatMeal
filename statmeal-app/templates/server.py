@@ -1,7 +1,9 @@
 # server.py
 # Hosting directory for StatMeal
 
-from flask import Flask, render_template
+from distutils.log import debug 
+from fileinput import filename 
+from flask import *
 
 app = Flask(__name__)
 
