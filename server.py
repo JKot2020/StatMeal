@@ -3,13 +3,13 @@
 
 from distutils.log import debug 
 from fileinput import filename 
-from flask import Flask, render_template
+from flask import *
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 @app.route('/')   
 def main():   
-    return render_template("statmeal.html")   
+    return render_template('statmeal.html')
   
 @app.route('/success', methods = ['POST'])   
 def success():   
