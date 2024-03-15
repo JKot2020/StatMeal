@@ -4,9 +4,22 @@
 
 import './App.css';
 import axios from "axios";
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 
 class App extends Component {
+    /*
+    const [data, setData] = useState([{}])
+
+    useEffect(() => {
+        fetch("/home").then(
+            res => res.json()
+        ).then(
+            data =>
+                setData(data)
+                console.log(data)
+        )
+    }, [])
+    */
   state = {
       // Initially, no file is selected
       selectedFile: null,
