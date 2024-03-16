@@ -9,13 +9,36 @@
         text-align: center;" >
             StatMeal
         </h1>
-        <form style="background-color:gray; padding: 10px; color:white"
-            action = "/success" method = "post" enctype="multipart/form-data">   
-            <input style="background-color: gray; border: none; color: white;
-            padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block;
-            font-size: 16px;"
-                type="file" name="file" />   
-            <input type = "submit" value="Upload">   
-        </form>   
+        <section>
+            <nav style="-webkit-flex: 1; -ms-flex: 1; flex: 1; background: #ccc; padding: 20px;">
+                <ul style="font-family:Helvetica">
+                    <h3>
+                        Navigation
+                    </h3>
+                    <button style="font-family:Helvetica; padding:5px">
+                        Home
+                    </button><br>
+                    <button style="font-family:Helvetica; padding:5px">
+                        Profile
+                    </button><br>
+                    <button style="font-family:Helvetica; padding:5px">
+                        Graph Maker
+                    </button><br>
+                    <button style="font-family:Helvetica; padding:5px">
+                        Predictive Model Maker
+                    </button>
+                </ul>
+            </nav>
+            <article style="-webkit-flex: 3; -ms-flex: 3; flex: 3; background-color: #f1f1f1; padding: 10px;">
+                <form style="background-color:gray; padding: 10px; color:white"
+                    action = "/success" method = "post" enctype="multipart/form-data">   
+                    <input style="background-color: gray; border: none; color: white;
+                    padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block;
+                    font-size: 16px;"
+                        type="file" name="file" />   
+                    <input type = "submit" value="Upload">   
+                </form>
+            </article>
+        </section> 
     </body>   
 </html>
