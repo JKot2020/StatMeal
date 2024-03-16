@@ -3,14 +3,16 @@
     <head>   
         <title>Home</title>
         <link rel="stylesheet" href="output.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>   
-    <body>
+    <body style="background-color:#34495E">
         <h1 style="background-color:mediumseagreen; font-family:'Helvetica'; font-size:50px; padding: 30px;
         text-align: center;" >
             StatMeal
         </h1>
         <section>
-            <nav style="-webkit-flex: 1; -ms-flex: 1; flex: 1; background: #ccc; padding: 20px;">
+            <nav style="background: #ccc; overflow: hidden; float: left; padding: 50px">
                 <ul style="font-family:Helvetica">
                     <h3>
                         Navigation
@@ -29,7 +31,7 @@
                     </button>
                 </ul>
             </nav>
-            <article style="-webkit-flex: 3; -ms-flex: 3; flex: 3; background-color: #f1f1f1; padding: 10px;">
+            <article style="background-color: #f1f1f1; padding: 10px; flex-direction: column; float: right;">
                 <form style="background-color:gray; padding: 10px; color:white"
                     action = "/success" method = "post" enctype="multipart/form-data">   
                     <input style="background-color: gray; border: none; color: white;
