@@ -14,7 +14,9 @@ def get_file(file_name):
 
 def load_data(file_name):
     # read from .csv file
-    survey_data = pd.read_csv(file_name, keep_default_na=False)
+    receipt_data = pd.read_csv(file_name, keep_default_na=False)
+
+    column_names = list(receipt_data.columns)
     
     # create dataframe
-    data_combined = pd.DataFrame(survey_data)
+    data_combined = pd.DataFrame(receipt_data)
