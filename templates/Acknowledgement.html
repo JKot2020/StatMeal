@@ -5,7 +5,10 @@
    </head> 
    <body> 
       <p>File uploaded successfully</p> 
-      <p>File Name: {{name}}</p> 
-      <p>Column Names: {{column}}</p>
-   </body> 
+      <p>File Name: {{name}}</p>
+      <p>Column Names:</p>
+         {% for data_head in column %}
+            <button>{{ data_head }}</button>
+         {% endfor %}
+   </body>
 </html>
