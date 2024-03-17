@@ -4,10 +4,11 @@ body {
 h1 {
     background-color:#2ECC71;
     font-family:'Helvetica';
-    font-size:50px;
-    padding: 30px;
+    padding: 10px;
     width: 100%;
     text-align: center;
+    align-items: center;
+    font-size: 100px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 h2 {
@@ -89,10 +90,10 @@ input {
 footer {
     background: #ccc;
     font-family:'Helvetica';
-    padding: 30px;
-    height: 10%;
+    padding: 10px;
     width: 100%;
     text-align: center;
+    align-items: center;
     position: absolute;
     bottom: 0;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
