@@ -63,19 +63,16 @@
             cursor: pointer;
          }
          article {
-             background-color: #f1f1f1;
+            background-color:#5D6D7E;
              padding: 10px;
              flex-direction: column;
              float: right;
          }
          form {
-             background-color:gray;
              padding: 10px;
-             color:white;
          }
          input {
-             background-color: gray;
-             border: none; color: white;
+             background-color: #5D6D7E;
              padding: 15px 32px;
              text-align: center;
              text-decoration: none;
@@ -84,14 +81,16 @@
          }
      </style>
    </head> 
-   <body> 
-      <p>File uploaded successfully</p> 
-      <p>File Name: {{name}}</p>
-      <p>Column Names:</p>
-         {% for data_head in column %}
-            <button class="sm_name_button">{{ data_head }}</button>
-         {% endfor %}
-      <br><br>
-      <button>Make Graph</button>
+   <body>
+      <article>
+         <p>File uploaded successfully</p> 
+         <p>File Name: {{name}}</p>
+         <p>Column Names:</p>
+            {% for data_head in column %}
+               <button class="sm_name_button">{{ data_head }}</button>
+            {% endfor %}
+         <br><br>
+         <button>Make Graph</button>
+      </article>
    </body>
 </html>
