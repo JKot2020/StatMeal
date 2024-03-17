@@ -17,7 +17,7 @@ def success():
     if request.method == 'POST':   
         f = request.files['file'] 
         f.save(f.filename)
-        return render_template("Acknowledgement.html",name = f.filename, column = get_file(f.filename))
+        return render_template("graphMaker.html",name = f.filename, column = get_file(f.filename))
   
 if __name__ == '__main__':   
     app.run(debug=True)
