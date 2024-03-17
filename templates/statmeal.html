@@ -5,43 +5,81 @@
         <link rel="stylesheet" href="statmeal.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                background-color:#34495E;
+            }
+            h1 {
+                background-color:#2ECC71;
+                font-family:'Helvetica';
+                font-size:50px;
+                padding: 30px;
+                text-align: center;
+            }
+            nav {
+                background: #ccc;
+                overflow: hidden;
+                float: left;
+                padding: 50px;
+            }
+            ul {
+                font-family:Helvetica;
+            }
+            .sm_nav_button {
+                background-color:#2ECC71;
+                font-family:Helvetica;
+                padding:10px;
+                border: 4px solid #ccc;
+            }
+            article {
+                background-color: #f1f1f1;
+                padding: 10px;
+                flex-direction: column;
+                float: right;
+            }
+            form {
+                background-color:gray;
+                padding: 10px;
+                color:white;
+            }
+            input {
+                background-color: gray;
+                border: none; color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+            }
+        </style>
     </head>   
-    <body style="background-color:#34495E">
-        <h1 style="background-color:#2ECC71; font-family:'Helvetica'; font-size:50px; padding: 30px;
-        text-align: center;" >
+    <body>
+        <h1>
             StatMeal
         </h1>
         <section>
-            <nav style="background: #ccc; overflow: hidden; float: left; padding: 50px">
-                <ul style="font-family:Helvetica">
+            <nav>
+                <ul>
                     <h3>
                         Navigation
                     </h3>
-                    <button style="background-color:#2ECC71; font-family:Helvetica; padding:10px;
-                                border: 4px solid #ccc;">
+                    <button class="sm_nav_button">
                         Home
                     </button><br>
-                    <button style="background-color:#2ECC71; font-family:Helvetica; padding:10px;
-                                border: 4px solid #ccc;">
+                    <button class="sm_nav_button">
                         Profile
                     </button><br>
-                    <button style="background-color:#2ECC71; font-family:Helvetica; padding:10px;
-                                border: 4px solid #ccc;">
+                    <button class="sm_nav_button">
                         Graph Maker
                     </button><br>
-                    <button style="background-color:#2ECC71; font-family:Helvetica; padding:10px;
-                                border: 4px solid #ccc;">
+                    <button class="sm_nav_button">
                         Predictive Model Maker
                     </button>
                 </ul>
             </nav>
-            <article style="background-color: #f1f1f1; padding: 10px; flex-direction: column; float: right;">
-                <form style="background-color:gray; padding: 10px; color:white"
-                    action = "/success" method = "post" enctype="multipart/form-data">   
-                    <input style="background-color: gray; border: none; color: white;
-                    padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block;
-                    font-size: 16px;"
-                        type="file" name="file" />   
+            <article>
+                <form action = "/success" method = "post" enctype="multipart/form-data">   
+                    <input type="file" name="file" />   
                     <input type = "submit" value="Upload">   
                 </form>
             </article>
