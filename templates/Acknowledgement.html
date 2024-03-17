@@ -10,11 +10,12 @@
       <article>
          <p>File uploaded successfully</p> 
          <p>File Name: {{name}}</p>
-         <p>Column Names:</p>
+         <h2>Column Names:</h2>
+            <p>Select the columns you want to use in your graph</p>
             {% for data_head in column %}
                <button class="sm_name_button">{{ data_head }}</button>
             {% endfor %}
-         <br><br>
+         <br><p>Select the graph type you want to use</p><br>
          <button>Make Graph</button>
       </article>
       <footer>
