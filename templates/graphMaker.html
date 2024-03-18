@@ -46,11 +46,19 @@
                   <button class="sm_name_button">Histogram</button>
                   <button class="sm_name_button">Line Graph</button>
                   <button class="sm_name_button">Pie Chart</button>
-               <br><br><button class="sm_nav_button">Make Graph</button>
+               <br><br><button class="sm_nav_button"
+                              type="button" onclick="show()" id="btnID">Make Graph</button><br>
+                  <img class="graph_image" id="test_graph" src="https://media.geeksforgeeks.org/wp-content/uploads/20210915115837/gfg3.png" alt="Boxplot" />
             </article>
       </section>
       <footer>
          <p>*Update*</p>
      </footer>
+     <script>
+         function show() {
+            document.getElementById('test_graph') 
+               .style.cssText = "display: block; align-items: center; margin: 10px";
+         }
+     </script>
    </body>
 </html>

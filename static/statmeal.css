@@ -115,6 +115,11 @@ input {
     display: inline-block;
     font-size: 16px;
 }
+.graph_image {
+    display: none;
+    align-items: center;
+    margin: 10px;
+}
 footer {
     background: #ccc;
     font-family:'Helvetica';
