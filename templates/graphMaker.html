@@ -50,7 +50,7 @@
                               type="button" onclick="show()" id="btnID">Make Graph</button><br>
                   <img class="graph_image" id="test_graph" src="/static/hist.png" alt="Histogram" /><br>
                   <a href="/static/hist.png" download="Histogram">
-                     <button class="sm_nav_button" type="button">Download PNG</button>
+                     <button class="sm_nav_button, graph_image" type="button" id="download_graph">Download PNG</button>
                  </a>
             </article>
       </section>
@@ -62,6 +62,8 @@
      <script>
          function show() {
             document.getElementById('test_graph') 
+               .style.cssText = "display: inline-block; align-items: center; margin: 10px";
+            document.getElementById('download_graph') 
                .style.cssText = "display: inline-block; align-items: center; margin: 10px";
          }
      </script>
