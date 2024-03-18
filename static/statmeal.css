@@ -30,6 +30,7 @@ nav {
     background: #ccc;
     overflow: hidden;
     position: absolute;
+    z-index: 1;
     float: left;
     flex: 1;
     margin: 10px;
@@ -89,12 +90,13 @@ ul {
 }
 article {
     background-color: #5D6D7E;
-    flex: 2;
+    flex: 0;
     padding: 10px;
     width: 100%;
     height: 100%;
     flex-direction: column;
     flex-grow: 1;
+    position: sticky;
     margin: 10px;
     float: center;
     text-align: center;
