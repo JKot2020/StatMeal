@@ -29,7 +29,6 @@
                   {% for data_head in column %}
                      <button class="sm_name_button" id="column" value="{{ data_head }}" onclick="selectColumnName(this.value)">{{ data_head }}</button>
                   {% endfor %}
-                  <br><p id="selected_name"> Selected Columns: </p>
                <br><h2>Graph Types:</h2>
                <p>Select the graph type you want to use</p>
                   <button class="sm_name_button" value="Auto Graph" onclick="selectGraph(this.value)">Auto Graph</button>
@@ -38,9 +37,11 @@
                   <button class="sm_name_button" value="Histogram Graph" onclick="selectGraph(this.value)">Histogram</button>
                   <button class="sm_name_button" value="Line Graph" onclick="selectGraph(this.value)">Line Graph</button>
                   <button class="sm_name_button" value="Pie Chart" onclick="selectGraph(this.value)">Pie Chart</button>
-                  <br><p id="selected_graph"> Selected Graph: </p>
-               <br><br><button class="sm_nav_button"
-                              type="button" onclick="show()" id="btnID">Make Graph</button><br>
+               <br><br><form action = "/graph-maker/output" method = "post" enctype="multipart/form-data">   
+                     <input class="sm_nav_button" type="button" value="Make Graph"><br>
+                     <p id="selected_name"></p><br>
+                     <p id="selected_graph"></p><br>
+                  </form>
                   <img class="graph_image" id="test_graph" src="/static/hist.png" alt="Histogram" /><br>
                   <a href="/static/hist.png" download="Histogram">
                      <button class="sm_nav_button, graph_image" type="button" id="download_graph">Download PNG</button>
@@ -71,7 +72,7 @@
             document.getElementById("selected_name").textContent += name + ", ";
          }
          function selectGraph(graph) {
-            document.getElementById("selected_graph").textContent = "Selected Graph: " + graph;
+            document.getElementById("selected_graph").textContent = graph;
          }
      </script>
    </body>
