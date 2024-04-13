@@ -22,6 +22,10 @@ def graph():
         f = request.files['file'] 
         f.save(f.filename)
         return render_template("graphMaker.html",name = f.filename, column = get_file(f.filename))
-  
+
+@app.route('/graph-maker/output')
+def graph_output():   
+    return render_template('graphMakerOutput.html')
+
 if __name__ == '__main__':   
     app.run(debug=True)
