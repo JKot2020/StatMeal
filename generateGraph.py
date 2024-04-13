@@ -15,6 +15,5 @@ def make_hist():
     my_hist = sns.displot(data=receipt_data['item_name']).set(title='item_name')
     my_hist.set_xticklabels(rotation=45, horizontalalignment='right', fontweight='light', fontsize='large')
     plt.xlabel('item_name')
-    plt.ylabel('Frequency')
 
     return my_hist
