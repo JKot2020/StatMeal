@@ -12,8 +12,8 @@ app = Flask(__name__, template_folder='templates')
 def main():   
     return render_template('statmeal.html')
   
-@app.route('/success', methods = ['POST'])   
-def success():   
+@app.route('/graph', methods = ['POST'])   
+def graph():   
     if request.method == 'POST':   
         f = request.files['file'] 
         f.save(f.filename)
