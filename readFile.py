@@ -13,7 +13,7 @@ def get_file(file):
 
 def load_data(file_name):
     # read from .csv file
-    receipt_data = pd.read_csv(file_name, keep_default_na=False)
+    receipt_data = pd.read_csv(open(file_name, encoding="utf-8", errors='ignore'), keep_default_na=False)
 
     column_names = {"columns": receipt_data.columns}
 
