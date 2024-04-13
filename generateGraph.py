@@ -7,13 +7,13 @@ import matplotlib.pyplot as plt
 import scipy as sp
 import seaborn as sns
 
-# histogram
-def make_hist():
+# auto
+def make_auto():
     file_name = "Balaji Fast Food Sales.csv"
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
     
-    my_hist = sns.displot(data=receipt_data['item_name']).set(title='item_name')
-    my_hist.set_xticklabels(rotation=45, horizontalalignment='right', fontweight='light', fontsize='large')
+    my_auto = sns.displot(data=receipt_data['item_name']).set(title='item_name')
+    my_auto.set_xticklabels(rotation=45, horizontalalignment='right', fontweight='light', fontsize='large')
     plt.xlabel('item_name')
 
-    return my_hist
+    return my_auto
