@@ -7,30 +7,20 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
    </head> 
    <body>
+      <div class="topnav" id="myTopnav">
+         <a href="home">Home</a>
+         <a href="profile">Profile</a>
+         <a href="graph-maker">Graph Maker</a>
+         <a href="predictive-model-maker" class="active">Predictive Model Maker</a>
+         <a href="javascript:void(0);" class="icon" onclick="openNav()">
+             <i class="fa fa-bars"></i>
+         </a>
+     </div>
       <h1>
          StatMeal
       </h1>
       <p class="page_type">Predictive Model Maker</p>
       <section>
-            <nav>
-               <ul>
-                  <h3>
-                        Navigation
-                  </h3>
-                  <button class="sm_nav_button">
-                        Home
-                  </button><br>
-                  <button class="sm_nav_button">
-                        Profile
-                  </button><br>
-                  <button class="sm_nav_button">
-                        Graph Maker
-                  </button><br>
-                  <button class="sm_nav_button">
-                        Predictive Model Maker
-                  </button>
-               </ul>
-            </nav>
             <article>
                 <h2>Generate your own predictive model</h2>
             </article>
@@ -41,4 +31,14 @@
          </footer>
       </section>
    </body>
+   <script>
+      function openNav() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+  </script>
 </html>

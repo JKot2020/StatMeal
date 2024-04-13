@@ -7,30 +7,20 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
    </head> 
    <body>
+      <div class="topnav" id="myTopnav">
+         <a href="home">Home</a>
+         <a href="profile">Profile</a>
+         <a href="graph-maker" class="active">Graph Maker</a>
+         <a href="predictive-model-maker">Predictive Model Maker</a>
+         <a href="javascript:void(0);" class="icon" onclick="openNav()">
+             <i class="fa fa-bars"></i>
+         </a>
+     </div>
       <h1>
          StatMeal
       </h1>
       <p class="page_type">Graph Maker</p>
       <section>
-            <nav>
-               <ul>
-                  <h3>
-                        Navigation
-                  </h3>
-                  <button class="sm_nav_button">
-                        Home
-                  </button><br>
-                  <button class="sm_nav_button">
-                        Profile
-                  </button><br>
-                  <button class="sm_nav_button">
-                        Graph Maker
-                  </button><br>
-                  <button class="sm_nav_button">
-                        Predictive Model Maker
-                  </button>
-               </ul>
-            </nav>
             <article>
                <p>File uploaded successfully</p> 
                <p>File Name: {{name}}</p>
@@ -63,6 +53,14 @@
          </footer>
       </section>
      <script>
+         function openNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+            x.className += " responsive";
+            } else {
+            x.className = "topnav";
+            }
+         }
          function show() {
             document.getElementById('test_graph') 
                .style.cssText = "display: inline-block; align-items: center; margin: 10px";
