@@ -8,11 +8,15 @@ from readFile import get_file
 
 app = Flask(__name__, template_folder='templates')
 
-@app.route('/')   
+@app.route('/')
 def main():   
     return render_template('statmeal.html')
+
+@app.route('/home')
+def home():   
+    return render_template('statmeal.html')
   
-@app.route('/graph', methods = ['POST'])   
+@app.route('/graph-maker', methods = ['POST'])   
 def graph():   
     if request.method == 'POST':   
         f = request.files['file'] 
