@@ -43,7 +43,7 @@ def make_dist(file_name, column_names, graph_name):
 # make boxplot
 def make_box(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
-    
+    #TODO parse column_names more to allow for more box plots
     my_box = plt.boxplot(data=receipt_data, x=column_names[0])
     my_box = plt.xticks(rotation=45)
     my_box = plt.suptitle(graph_name)
