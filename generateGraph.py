@@ -19,5 +19,5 @@ def make_auto():
     return my_auto
 
 # test
-def test_graph(file_name, column_name, graph_name):
+def sort_graph_data(file_name, column_name, graph_name):
     return column_name

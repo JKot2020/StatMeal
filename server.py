@@ -32,7 +32,7 @@ def graph_output():
     if request.method == 'POST':
         columns = request.form.get('columns')
         graph = request.form.get('graph')
-        return render_template('graphMakerOutput.html', test_column = test_graph(FILE_NAME, columns, graph), test_graph = graph)
+        return render_template('graphMakerOutput.html', test_column = sort_graph_data(FILE_NAME, columns, graph), test_graph = graph)
 
 if __name__ == '__main__':   
     app.run(debug=True)
