@@ -1,6 +1,7 @@
 # generateGraph.py
 # Generates graph based on specified button prompt
 
+import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -22,6 +23,9 @@ def make_auto(file_name, column_names, graph_name):
     my_auto = sns.displot(data=receipt_data[column_names[0]]).set(title=graph_name)
     my_auto.set_xticklabels(rotation=45, horizontalalignment='right', fontweight='light', fontsize='large')
 
-    my_auto.figure.savefig("output.png")
+    my_path = os.path.abspath(__file__)
+    # Remove "/generateGraph.py" from file path
+    my_path = my_path[:-17]
+    my_auto.figure.savefig(my_path + "/static/output.png")
 
     return my_auto
