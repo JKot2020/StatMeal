@@ -13,8 +13,10 @@ def sort_graph_data(file_name, column_names, graph_name):
     column_names = column_names[:-2]
     column_names = column_names.split(", ")
 
-    if graph_name == "Distribution Graph":
+    if graph_name == "Distribution Plot":
         return make_dist(file_name, column_names, graph_name)
+    if graph_name == "Histogram":
+        return make_hist(file_name, column_names, graph_name)
 
 # make distribution graph
 def make_dist(file_name, column_names, graph_name):
@@ -28,9 +30,25 @@ def make_dist(file_name, column_names, graph_name):
     my_dist.set_xticklabels(rotation=45, horizontalalignment='right', fontweight='light', fontsize='large')
     my_dist.tight_layout()
 
-    my_dist = os.path.abspath(__file__)
+    my_path = os.path.abspath(__file__)
     # Remove "/generateGraph.py" from file path
     my_path = my_path[:-17]
     my_dist.figure.savefig(my_path + "/static/output.png")
 
     return my_dist
+
+# make histogram
+def make_hist(file_name, column_names, graph_name):
+    receipt_data = pd.read_csv(file_name, keep_default_na=False)
+    
+    my_hist = sns.histplot(data=receipt_data[column_names[0]]).set(title=graph_name)
+    #my_hist.set_xticklabels(rotation=45, horizontalalignment='right', fontweight='light', fontsize='large')
+    #my_hist.tight_layout()
+
+    my_path = os.path.abspath(__file__)
+    # Remove "/generateGraph.py" from file path
+    my_path = my_path[:-17]
+    save_my_hist = my_hist.get_figure()
+    save_my_hist.savefig(my_path + "/static/output.png")
+
+    return save_my_hist
