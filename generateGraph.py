@@ -20,6 +20,8 @@ def sort_graph_data(file_name, column_names, graph_name):
         return make_box(file_name, column_names, graph_name)
     if graph_name == "Histogram":
         return make_hist(file_name, column_names, graph_name)
+    if graph_name == "Line Graph":
+        return make_line(file_name, column_names, graph_name)
 
 # make distribution graph
 def make_dist(file_name, column_names, graph_name):
@@ -70,3 +72,20 @@ def make_hist(file_name, column_names, graph_name):
     my_hist = plt.savefig(my_path + "/static/output.png")
 
     return my_hist
+
+# make line graph
+def make_line(file_name, column_names, graph_name):
+    receipt_data = pd.read_csv(file_name, keep_default_na=False)
+    
+    my_line = plt.plot(receipt_data[column_names[0]], receipt_data[column_names[1]])
+    my_line = plt.title(graph_name)
+    my_line = plt.xlabel(column_names[0])
+    my_line = plt.ylabel(column_names[1])
+    my_line = plt.tight_layout()
+
+    my_path = os.path.abspath(__file__)
+    # Remove "/generateGraph.py" from file path
+    my_path = my_path[:-17]
+    my_line = plt.savefig(my_path + "/static/output.png")
+
+    return my_line
