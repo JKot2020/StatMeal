@@ -39,8 +39,8 @@
                   <button class="sm_name_button" value="Pie Chart" onclick="selectGraph(this.value)">Pie Chart</button>
                <br><br><form action = "/graph-output" method = "post" enctype="multipart/form-data">   
                      <input class="sm_nav_button" type="submit" value="Make Graph"><br>
-                     <p id="selected_name" name='columns'></p><br>
-                     <p id="selected_graph" name="graph"></p><br>
+                     <textarea id="selected_name" name='columns'></textarea><br>
+                     <textarea id="selected_graph" name="graph"></textarea><br>
                   </form>
                   <img class="graph_image" id="test_graph" src="/static/hist.png" alt="Histogram" /><br>
                   <a href="/static/hist.png" download="Histogram">
