@@ -22,6 +22,8 @@ def sort_graph_data(file_name, column_names, graph_name):
         return make_hist(file_name, column_names, graph_name)
     if graph_name == "Line Graph":
         return make_line(file_name, column_names, graph_name)
+    if graph_name == "Pie Chart":
+        return make_pie(file_name, column_names, graph_name)
 
 # make distribution graph
 def make_dist(file_name, column_names, graph_name):
@@ -73,6 +75,7 @@ def make_hist(file_name, column_names, graph_name):
 
     return my_hist
 
+#TODO Fix line graph variables
 # make line graph
 def make_line(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
@@ -89,3 +92,17 @@ def make_line(file_name, column_names, graph_name):
     my_line = plt.savefig(my_path + "/static/output.png")
 
     return my_line
+
+# make pie chart
+def make_pie(file_name, column_names, graph_name):
+    receipt_data = pd.read_csv(file_name, keep_default_na=False)
+    
+    my_pie = receipt_data[column_names[0]].value_counts(dropna=False).plot.pie(autopct='%1.1f%%')
+    my_pie = plt.axis('equal')
+
+    my_path = os.path.abspath(__file__)
+    # Remove "/generateGraph.py" from file path
+    my_path = my_path[:-17]
+    my_pie = plt.savefig(my_path + "/static/output.png")
+
+    return my_pie
