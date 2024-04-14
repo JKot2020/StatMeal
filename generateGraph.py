@@ -29,6 +29,8 @@ def sort_graph_data(file_name, column_names, graph_name):
 def make_dist(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
     
+    # Clean plot beforehand
+    plt.clf()
     # Check if there is both an x and y variable
     if (len(column_names) > 1):
         my_dist = sns.displot(data=receipt_data, x=column_names[0], y=column_names[1]).set(title=graph_name)
@@ -47,6 +49,9 @@ def make_dist(file_name, column_names, graph_name):
 # make boxplot
 def make_box(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
+
+    # Clean plot beforehand
+    plt.clf()
     #TODO parse column_names more to allow for more box plots
     my_box = plt.boxplot(data=receipt_data, x=column_names[0])
     my_box = plt.xticks(rotation=45)
@@ -64,6 +69,8 @@ def make_box(file_name, column_names, graph_name):
 def make_hist(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
     
+    # Clean plot beforehand
+    plt.clf()
     my_hist = sns.histplot(receipt_data[column_names])
     my_hist = plt.xticks(rotation=45)
     my_hist = plt.tight_layout()
@@ -80,6 +87,8 @@ def make_hist(file_name, column_names, graph_name):
 def make_line(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
     
+    # Clean plot beforehand
+    plt.clf()
     my_line = plt.plot(receipt_data[column_names[0]], receipt_data[column_names[1]])
     my_line = plt.title(graph_name)
     my_line = plt.xlabel(column_names[0])
@@ -96,7 +105,9 @@ def make_line(file_name, column_names, graph_name):
 # make pie chart
 def make_pie(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
-    
+
+    # Clean plot beforehand
+    plt.clf()
     my_pie = receipt_data[column_names[0]].value_counts(dropna=False).plot.pie(autopct='%1.1f%%')
     my_pie = plt.axis('equal')
 
