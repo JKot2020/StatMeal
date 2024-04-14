@@ -20,7 +20,11 @@ def sort_graph_data(file_name, column_names, graph_name):
 def make_auto(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
     
-    my_auto = sns.displot(data=receipt_data[column_names[0]]).set(title=graph_name)
+    # Check if there is both an x and y variable
+    if (column_names[1]):
+        my_auto = sns.displot(data=receipt_data, x=column_names[0], y=column_names[1]).set(title=graph_name)
+    else:
+        my_auto = sns.displot(data=receipt_data[column_names[0]]).set(title=graph_name)
     my_auto.set_xticklabels(rotation=45, horizontalalignment='right', fontweight='light', fontsize='large')
     my_auto.tight_layout()
 
