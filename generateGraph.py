@@ -7,17 +7,21 @@ import matplotlib.pyplot as plt
 import scipy as sp
 import seaborn as sns
 
+# filters given data to check which graph should be made
+def sort_graph_data(file_name, column_names, graph_name):
+    column_names = column_names[:-2]
+    column_names = column_names.split(", ")
+
+    if graph_name == "Auto-Select Graph":
+        return make_auto(file_name, column_names, graph_name)
+
 # auto
-def make_auto():
-    file_name = "Balaji Fast Food Sales.csv"
+def make_auto(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
     
-    my_auto = sns.displot(data=receipt_data['item_name']).set(title='item_name')
+    my_auto = sns.displot(data=receipt_data[column_names[0]]).set(title=graph_name)
     my_auto.set_xticklabels(rotation=45, horizontalalignment='right', fontweight='light', fontsize='large')
-    plt.xlabel('item_name')
+
+    my_auto.figure.savefig("output.png")
 
     return my_auto
-
-# test
-def sort_graph_data(file_name, column_name, graph_name):
-    return column_name
