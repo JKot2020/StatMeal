@@ -7,6 +7,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import scipy as sp
 import seaborn as sns
+from pylab import *
 
 # filters given data to check which graph should be made
 def sort_graph_data(file_name, column_names, graph_name):
@@ -15,6 +16,8 @@ def sort_graph_data(file_name, column_names, graph_name):
 
     if graph_name == "Distribution Plot":
         return make_dist(file_name, column_names, graph_name)
+    if graph_name == "Box Plot":
+        return make_box(file_name, column_names, graph_name)
     if graph_name == "Histogram":
         return make_hist(file_name, column_names, graph_name)
 
@@ -37,11 +40,27 @@ def make_dist(file_name, column_names, graph_name):
 
     return my_dist
 
+# make boxplot
+def make_box(file_name, column_names, graph_name):
+    receipt_data = pd.read_csv(file_name, keep_default_na=False)
+    
+    my_box = plt.boxplot(data=receipt_data, x=column_names[0])
+    my_box = plt.xticks(rotation=45)
+    my_box = plt.suptitle(graph_name)
+    my_box = plt.tight_layout()
+
+    my_path = os.path.abspath(__file__)
+    # Remove "/generateGraph.py" from file path
+    my_path = my_path[:-17]
+    my_box = plt.savefig(my_path + "/static/output.png")
+
+    return my_box
+
 # make histogram
 def make_hist(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
     
-    my_hist = sns.histplot(data=receipt_data, x=column_names[0]).set(title=graph_name)
+    my_hist = sns.histplot(receipt_data[column_names])
     my_hist = plt.xticks(rotation=45)
     my_hist = plt.tight_layout()
 
