@@ -18,11 +18,18 @@ def home():
     return render_template('statmeal.html')
   
 @app.route('/graph-maker', methods = ['POST'])   
-def graph():   
+def predict():
     if request.method == 'POST':   
         f = request.files['file'] 
         f.save(f.filename)
         return render_template("graphMaker.html", name = f.filename, column = get_file(f.filename))
+
+@app.route('/predict-maker', methods = ['POST'])   
+def graph():   
+    if request.method == 'POST':   
+        f = request.files['file'] 
+        f.save(f.filename)
+        return render_template("predictMaker.html", name = f.filename, column = get_file(f.filename))
 
 @app.route('/graph-output', methods = ['POST'])
 def graph_output():
