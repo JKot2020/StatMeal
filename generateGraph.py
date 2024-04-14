@@ -13,24 +13,24 @@ def sort_graph_data(file_name, column_names, graph_name):
     column_names = column_names[:-2]
     column_names = column_names.split(", ")
 
-    if graph_name == "Auto-Select Graph":
-        return make_auto(file_name, column_names, graph_name)
+    if graph_name == "Distribution Graph":
+        return make_dist(file_name, column_names, graph_name)
 
-# auto
-def make_auto(file_name, column_names, graph_name):
+# make distribution graph
+def make_dist(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
     
     # Check if there is both an x and y variable
     if (column_names[1]):
-        my_auto = sns.displot(data=receipt_data, x=column_names[0], y=column_names[1]).set(title=graph_name)
+        my_dist = sns.displot(data=receipt_data, x=column_names[0], y=column_names[1]).set(title=graph_name)
     else:
-        my_auto = sns.displot(data=receipt_data[column_names[0]]).set(title=graph_name)
-    my_auto.set_xticklabels(rotation=45, horizontalalignment='right', fontweight='light', fontsize='large')
-    my_auto.tight_layout()
+        my_dist = sns.displot(data=receipt_data[column_names[0]]).set(title=graph_name)
+    my_dist.set_xticklabels(rotation=45, horizontalalignment='right', fontweight='light', fontsize='large')
+    my_dist.tight_layout()
 
-    my_path = os.path.abspath(__file__)
+    my_dist = os.path.abspath(__file__)
     # Remove "/generateGraph.py" from file path
     my_path = my_path[:-17]
-    my_auto.figure.savefig(my_path + "/static/output.png")
+    my_dist.figure.savefig(my_path + "/static/output.png")
 
-    return my_auto
+    return my_dist
