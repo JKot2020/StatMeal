@@ -23,7 +23,7 @@ def make_dist(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
     
     # Check if there is both an x and y variable
-    if (column_names[1]):
+    if (len(column_names) > 1):
         my_dist = sns.displot(data=receipt_data, x=column_names[0], y=column_names[1]).set(title=graph_name)
     else:
         my_dist = sns.displot(data=receipt_data[column_names[0]]).set(title=graph_name)
