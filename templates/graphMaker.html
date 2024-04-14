@@ -24,19 +24,19 @@
             <article>
                <p>File uploaded successfully</p> 
                <p>File Name: {{name}}</p>
-               <h2>Column Names:</h2>
-                  <p>Select the columns you want to use in your graph</p>
-                  {% for data_head in column %}
-                     <button class="sm_name_button" id="column" value="{{ data_head }}" onclick="selectColumnName(this.value)">{{ data_head }}</button>
-                  {% endfor %}
                <br><h2>Graph Types:</h2>
                <p>Select the graph type you want to use</p>
-                  <button class="sm_name_button" value="Auto Graph" onclick="selectGraph(this.value)">Auto Graph</button>
+                  <button class="sm_name_button" value="Auto-Select Graph" onclick="selectGraph(this.value)">Auto-Select Graph</button>
                   <button class="sm_name_button" value="Bar Graph" onclick="selectGraph(this.value)">Bar Graph</button>
                   <button class="sm_name_button" value="Box Plot" onclick="selectGraph(this.value)">Box Plot</button>
                   <button class="sm_name_button" value="Histogram" onclick="selectGraph(this.value)">Histogram</button>
                   <button class="sm_name_button" value="Line Graph" onclick="selectGraph(this.value)">Line Graph</button>
                   <button class="sm_name_button" value="Pie Chart" onclick="selectGraph(this.value)">Pie Chart</button>
+               <h2>Column Names:</h2>
+                  <p>Select the columns you want to use in your graph</p>
+                  {% for data_head in column %}
+                     <button class="sm_name_button" id="column" value="{{ data_head }}" onclick="selectColumnName(this.value)">{{ data_head }}</button>
+                  {% endfor %}
                <br><br><form action = "/graph-output" method = "post" enctype="multipart/form-data">   
                      <input class="sm_nav_button" type="submit" value="Make Graph"><br>
                      <textarea id="selected_graph" name="graph"></textarea><br>
