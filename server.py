@@ -7,6 +7,8 @@ from flask import *
 from readFile import *
 from generateGraph import *
 
+FILE_NAME = ""
+
 app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
@@ -22,6 +24,7 @@ def graph():
     if request.method == 'POST':   
         f = request.files['file'] 
         f.save(f.filename)
+        FILE_NAME = f.filename
         return render_template("graphMaker.html", name = f.filename, column = get_file(f.filename))
 
 @app.route('/graph-output', methods = ['POST'])
@@ -29,7 +32,7 @@ def graph_output():
     if request.method == 'POST':
         columns = request.form.get('columns')
         graph = request.form.get('graph')
-        return render_template('graphMakerOutput.html', test_column = test_graph(columns, graph))
+        return render_template('graphMakerOutput.html', test_column = test_graph(FILE_NAME, columns, graph))
 
 if __name__ == '__main__':   
     app.run(debug=True)
