@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>   
+    <head>   
+        <title>Home</title>
+        <link type="text/css" rel="stylesheet" href="/static/statmeal.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>   
+    <body>
+        <div class="topnav" id="myTopnav">
+            <a href="home" class="active">Home</a>
+            <a href="profile">Profile</a>
+            <a href="graph-maker">Graph Maker</a>
+            <a href="predictive-model-maker">Predictive Model Maker</a>
+            <a href="javascript:void(0);" class="icon" onclick="openNav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <h1>
+            StatMeal
+        </h1>
+        <p class="page_type">Home</p>
+        <section>
+            <article>
+                <h2>Welcome to StatMeal!</h2>
+                <p>StatMeal is a custom graph and predictive model maker.<br>StatMeal was originally used for sorting customer receipt data from restaurants, but this program can be used to sort multiple kinds of data.</p>
+                <h2>Getting Started</h2>
+                <p>Select a spreadsheet file to use for the graph maker.<br>The file must be in a .csv format.<br>Make sure it the file is organized in columns with the data type listed at the head of the column.</p>
+                <form action = "/graph-maker" method = "post" enctype="multipart/form-data">   
+                    <input class="sm_nav_button" type="file" name="file" />   
+                    <input class="sm_nav_button" type="submit" value="Upload">   
+                </form>
+            </article>
+        </section>
+        <section>
+            <footer>
+                <p>*Update*</p>
+            </footer>
+        </section>
+    </body>
+    <script>
+        function openNav() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
+</html>
