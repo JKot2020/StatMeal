@@ -22,6 +22,7 @@ def make_auto(file_name, column_names, graph_name):
     
     my_auto = sns.displot(data=receipt_data[column_names[0]]).set(title=graph_name)
     my_auto.set_xticklabels(rotation=45, horizontalalignment='right', fontweight='light', fontsize='large')
+    my_auto.tight_layout()
 
     my_path = os.path.abspath(__file__)
     # Remove "/generateGraph.py" from file path
