@@ -4,7 +4,8 @@
 from distutils.log import debug 
 from fileinput import filename 
 from flask import *
-from readFile import get_file
+from readFile import *
+from generateGraph import *
 
 app = Flask(__name__, template_folder='templates')
 
@@ -21,11 +22,14 @@ def graph():
     if request.method == 'POST':   
         f = request.files['file'] 
         f.save(f.filename)
-        return render_template("graphMaker.html",name = f.filename, column = get_file(f.filename))
+        return render_template("graphMaker.html", name = f.filename, column = get_file(f.filename))
 
-@app.route('/graph-maker/output')
-def graph_output():   
-    return render_template('graphMakerOutput.html')
+@app.route('/graph-output', methods = ['POST'])
+def graph_output():
+    if request.method == 'POST':
+        columns = request.form.get('columns')
+        graph = request.form.get('graph')
+        return render_template('graphMakerOutput.html', test_column = test_graph(columns, graph))
 
 if __name__ == '__main__':   
     app.run(debug=True)

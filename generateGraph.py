@@ -17,3 +17,7 @@ def make_auto():
     plt.xlabel('item_name')
 
     return my_auto
+
+# test
+def test_graph(column_name, graph_name):
+    return column_name
