@@ -20,8 +20,8 @@ def sort_graph_data(file_name, column_names, graph_name):
         return make_box(file_name, column_names, graph_name)
     if graph_name == "Histogram":
         return make_hist(file_name, column_names, graph_name)
-    if graph_name == "Line Graph":
-        return make_line(file_name, column_names, graph_name)
+    if graph_name == "Scatter Plot":
+        return make_scatter(file_name, column_names, graph_name)
     if graph_name == "Pie Chart":
         return make_pie(file_name, column_names, graph_name)
 
@@ -81,25 +81,24 @@ def make_hist(file_name, column_names, graph_name):
 
     return my_hist
 
-#TODO Fix line graph variables
-# make line graph
-def make_line(file_name, column_names, graph_name):
+# make scatter plot
+def make_scatter(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
     
     # Clean plot beforehand
     plt.clf()
-    my_line = plt.plot(receipt_data[column_names[0]], receipt_data[column_names[1]])
-    my_line = plt.title(graph_name)
-    my_line = plt.xlabel(column_names[0])
-    my_line = plt.ylabel(column_names[1])
-    my_line = plt.tight_layout()
+    my_scatter = plt.scatter(receipt_data[column_names[0]], receipt_data[column_names[1]])
+    my_scatter = plt.title(graph_name)
+    my_scatter = plt.xlabel(column_names[0])
+    my_scatter = plt.ylabel(column_names[1])
+    my_scatter = plt.tight_layout()
 
     my_path = os.path.abspath(__file__)
     # Remove "/generateGraph.py" from file path
     my_path = my_path[:-17]
-    my_line = plt.savefig(my_path + "/static/output.png")
+    my_scatter = plt.savefig(my_path + "/static/output.png")
 
-    return my_line
+    return my_scatter
 
 # make pie chart
 def make_pie(file_name, column_names, graph_name):
