@@ -41,14 +41,13 @@ def make_dist(file_name, column_names, graph_name):
 def make_hist(file_name, column_names, graph_name):
     receipt_data = pd.read_csv(file_name, keep_default_na=False)
     
-    my_hist = sns.histplot(data=receipt_data[column_names[0]]).set(title=graph_name)
-    #my_hist.set_xticklabels(rotation=45, horizontalalignment='right', fontweight='light', fontsize='large')
-    #my_hist.tight_layout()
+    my_hist = sns.histplot(data=receipt_data, x=column_names[0]).set(title=graph_name)
+    my_hist = plt.xticks(rotation=45)
+    my_hist = plt.tight_layout()
 
     my_path = os.path.abspath(__file__)
     # Remove "/generateGraph.py" from file path
     my_path = my_path[:-17]
-    save_my_hist = my_hist.get_figure()
-    save_my_hist.savefig(my_path + "/static/output.png")
+    my_hist = plt.savefig(my_path + "/static/output.png")
 
-    return save_my_hist
+    return my_hist
