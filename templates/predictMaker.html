@@ -29,7 +29,9 @@
                 {% endfor %}
                 <br><br><form action = "/graph-output" method = "post" enctype="multipart/form-data">   
                   <input class="sm_nav_button" type="submit" value="Make Predictive Model"><br>
+                  <p>Column Names</p><br>
                   <textarea id="selected_name" name='columns'></textarea><br>
+                  <p>File Name</p>
                   <textarea id="selected_file" name='file'>{{name}}</textarea><br>
                </form>
             </article>

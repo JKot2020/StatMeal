@@ -38,8 +38,11 @@
                   {% endfor %}
                <br><br><form action = "/graph-output" method = "post" enctype="multipart/form-data">   
                      <input class="sm_nav_button" type="submit" value="Make Graph"><br>
+                     <p>Graph Type</p>
                      <textarea id="selected_graph" name="graph"></textarea><br>
+                     <p>Column Names<br>(Assume the first and second inputs represent x and y respectively)</p>
                      <textarea id="selected_name" name='columns'></textarea><br>
+                     <p>File Name</p>
                      <textarea id="selected_file" name='file'>{{name}}</textarea><br>
                   </form>
             </article>
