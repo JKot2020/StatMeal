@@ -53,8 +53,11 @@ def make_box(file_name, column_names, graph_name):
     # Clean plot beforehand
     plt.clf()
     #TODO parse column_names more to allow for more box plots
-    my_box = plt.boxplot(data=receipt_data, x=column_names[0])
-    my_box = plt.suptitle(column_names[0])
+    if (len(column_names) > 1):
+        my_box = sns.boxplot(data=receipt_data, x=column_names[0], y=column_names[1])
+    else:
+        my_box = sns.boxplot(data=receipt_data, x=column_names[0])
+    my_box = plt.suptitle(column_names)
     my_box = plt.tight_layout()
 
     my_path = os.path.abspath(__file__)
@@ -108,6 +111,7 @@ def make_pie(file_name, column_names, graph_name):
     plt.clf()
     my_pie = receipt_data[column_names[0]].value_counts(dropna=False).plot.pie(autopct='%1.1f%%')
     my_pie = plt.axis('equal')
+    my_pie = plt.title(column_names[0])
 
     my_path = os.path.abspath(__file__)
     # Remove "/generateGraph.py" from file path
