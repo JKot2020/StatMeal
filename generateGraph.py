@@ -52,7 +52,8 @@ def make_box(file_name, column_names, graph_name):
 
     # Clean plot beforehand
     plt.clf()
-    #TODO parse column_names more to allow for more box plots
+    
+    # Check if there is both an x and y variable
     if (len(column_names) > 1):
         my_box = sns.boxplot(data=receipt_data, x=column_names[0], y=column_names[1])
     else:
