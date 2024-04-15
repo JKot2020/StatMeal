@@ -27,7 +27,7 @@ def sort_graph_data(file_name, column_names, graph_name):
 
 # make distribution graph
 def make_dist(file_name, column_names, graph_name):
-    receipt_data = pd.read_csv(file_name, keep_default_na=False)
+    receipt_data = pd.read_csv(open(file_name, encoding="utf-8", errors='ignore'), keep_default_na=False)
     
     # Clean plot beforehand
     plt.clf()
@@ -48,11 +48,11 @@ def make_dist(file_name, column_names, graph_name):
 
 # make boxplot
 def make_box(file_name, column_names, graph_name):
-    receipt_data = pd.read_csv(file_name, keep_default_na=False)
+    receipt_data = pd.read_csv(open(file_name, encoding="utf-8", errors='ignore'), keep_default_na=False)
 
     # Clean plot beforehand
     plt.clf()
-    
+
     # Check if there is both an x and y variable
     if (len(column_names) > 1):
         my_box = sns.boxplot(data=receipt_data, x=column_names[0], y=column_names[1])
@@ -70,7 +70,7 @@ def make_box(file_name, column_names, graph_name):
 
 # make histogram
 def make_hist(file_name, column_names, graph_name):
-    receipt_data = pd.read_csv(file_name, keep_default_na=False)
+    receipt_data = pd.read_csv(open(file_name, encoding="utf-8", errors='ignore'), keep_default_na=False)
     
     # Clean plot beforehand
     plt.clf()
@@ -87,7 +87,7 @@ def make_hist(file_name, column_names, graph_name):
 
 # make scatter plot
 def make_scatter(file_name, column_names, graph_name):
-    receipt_data = pd.read_csv(file_name, keep_default_na=False)
+    receipt_data = pd.read_csv(open(file_name, encoding="utf-8", errors='ignore'), keep_default_na=False)
     
     # Clean plot beforehand
     plt.clf()
@@ -106,7 +106,7 @@ def make_scatter(file_name, column_names, graph_name):
 
 # make pie chart
 def make_pie(file_name, column_names, graph_name):
-    receipt_data = pd.read_csv(file_name, keep_default_na=False)
+    receipt_data = pd.read_csv(open(file_name, encoding="utf-8", errors='ignore'), keep_default_na=False)
 
     # Clean plot beforehand
     plt.clf()
