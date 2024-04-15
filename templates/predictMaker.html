@@ -23,6 +23,15 @@
       <section>
             <article>
                 <h2>Generate your own predictive model</h2>
+                <p>Select the columns you want to use in your predictive model</p>
+                {% for data_head in column %}
+                   <button class="sm_name_button" id="column" value="{{ data_head }}" onclick="selectColumnName(this.value)">{{ data_head }}</button>
+                {% endfor %}
+                <br><br><form action = "/graph-output" method = "post" enctype="multipart/form-data">   
+                  <input class="sm_nav_button" type="submit" value="Make Predictive"><br>
+                  <textarea id="selected_name" name='columns'></textarea><br>
+                  <textarea id="selected_file" name='file'>{{name}}</textarea><br>
+               </form>
             </article>
       </section>
       <section>
