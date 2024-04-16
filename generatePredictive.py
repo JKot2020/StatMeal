@@ -7,7 +7,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import scipy as sp
 import seaborn as sns
-import statsmodels.formula.api as smf
+import statsmodels.api as smf
 from pylab import *
 
 # Generate regression model and return to web page
@@ -17,8 +17,8 @@ def make_regression(file_name, column_names):
 
     receipt_data = pd.read_csv(open(file_name, encoding="utf-8", errors='ignore'), keep_default_na=False)
     Y, X = receipt_data[column_names[0]], receipt_data[column_names[0:]]
-    res = smf.ols(Y, X)
-    res = mod.fit()
+    my_model = smf.OLS(Y, X)
+    res = my_model.fit()
     my_summary = res.summary()
     
     return my_summary
