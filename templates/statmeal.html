@@ -26,9 +26,16 @@
                 <p>StatMeal is a custom graph and predictive model maker.<br>StatMeal was originally used for sorting customer receipt data from restaurants, but this program can be used to sort multiple kinds of data.</p>
                 <h2>Getting Started</h2>
                 <p>Select a spreadsheet file to use for the graph maker.<br>The file must be in a .csv format.<br>Make sure it the file is organized in columns with the data type listed at the head of the column.</p>
-                <form action = "/graph-maker" method = "post" enctype="multipart/form-data">   
-                    <input class="sm_nav_button" type="file" name="file" />   
-                    <input class="sm_nav_button" type="submit" value="Upload">   
+                <form action = "/graph-maker" method = "post" enctype="multipart/form-data">
+                    <p>Graph Maker</p><br>
+                    <input class="sm_nav_button" type="file" name="file" />
+                    <input class="sm_nav_button" type="submit" value="Upload">
+                </form>
+                <p>Alternatively, you can submit a data frame to create a predictive model.</p>
+                <form action = "/predict-maker" method = "post" enctype="multipart/form-data">
+                    <p>Predictive Model Maker</p><br>
+                    <input class="sm_nav_button" type="file" name="file" />
+                    <input class="sm_nav_button" type="submit" value="Upload">
                 </form>
             </article>
         </section>

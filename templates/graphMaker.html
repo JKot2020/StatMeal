@@ -27,10 +27,9 @@
                <br><h2>Graph Types:</h2>
                <p>Select the graph type you want to use</p>
                   <button class="sm_name_button" value="Distribution Plot" onclick="selectGraph(this.value)">Distribution Plot</button>
-                  <button class="sm_name_button" value="Bar Graph" onclick="selectGraph(this.value)">Bar Graph</button>
                   <button class="sm_name_button" value="Box Plot" onclick="selectGraph(this.value)">Box Plot</button>
                   <button class="sm_name_button" value="Histogram" onclick="selectGraph(this.value)">Histogram</button>
-                  <button class="sm_name_button" value="Line Graph" onclick="selectGraph(this.value)">Line Graph</button>
+                  <button class="sm_name_button" value="Scatter Plot" onclick="selectGraph(this.value)">Scatter Plot</button>
                   <button class="sm_name_button" value="Pie Chart" onclick="selectGraph(this.value)">Pie Chart</button>
                <h2>Column Names:</h2>
                   <p>Select the columns you want to use in your graph</p>
@@ -39,8 +38,11 @@
                   {% endfor %}
                <br><br><form action = "/graph-output" method = "post" enctype="multipart/form-data">   
                      <input class="sm_nav_button" type="submit" value="Make Graph"><br>
+                     <p>Graph Type</p>
                      <textarea id="selected_graph" name="graph"></textarea><br>
+                     <p>Column Names<br>(Assume the first and second inputs represent x and y respectively)</p>
                      <textarea id="selected_name" name='columns'></textarea><br>
+                     <p>File Name</p>
                      <textarea id="selected_file" name='file'>{{name}}</textarea><br>
                   </form>
             </article>
@@ -58,12 +60,6 @@
             } else {
             x.className = "topnav";
             }
-         }
-         function show() {
-            document.getElementById('test_graph') 
-               .style.cssText = "display: inline-block; align-items: center; margin: 10px";
-            document.getElementById('download_graph') 
-               .style.cssText = "display: inline-block; align-items: center; margin: 10px";
          }
          function selectColumnName(name) {
             document.getElementById("selected_name").textContent += name + ", ";
