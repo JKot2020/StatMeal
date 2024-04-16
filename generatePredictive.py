@@ -19,6 +19,5 @@ def make_regression(file_name, column_names):
     Y, X = receipt_data[column_names[0]], receipt_data[column_names[0:]]
     my_model = smf.OLS(Y, X)
     res = my_model.fit()
-    my_summary = res.summary()
     
-    return my_summary
+    return res.summary()
