@@ -16,8 +16,8 @@ def make_regression(file_name, column_names):
     column_names = column_names.split(", ")
 
     receipt_data = pd.read_csv(open(file_name, encoding="utf-8", errors='ignore'), keep_default_na=False)
-    mod = smf.ols(formula = "column_names[0] ~ column_names[1]", data = receipt_data.dropna())
-    res = mod.fit()
+    Y, X = receipt_data(column_names[0]), receipt_data(column_names[1:])
+    res = mod.fit(Y, X)
     my_summary = res.summary()
     
     return my_summary
