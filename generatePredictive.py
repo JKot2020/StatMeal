@@ -21,3 +21,7 @@ def make_regression(file_name, column_names):
     res = my_model.fit()
     
     return res.summary()
+
+# Generate predictive model based on model
+def make_predictive():
+    return
