@@ -59,7 +59,7 @@ def regression_output():
         # generate pdf file format
         f = open(my_path + "/static/Regression.txt", "r")
         for x in f:
-            pdf.cell(200, 10, txt = x, ln = 1, align = 'C')
+            pdf.cell(200, 10, txt = x, ln = 1, align = 'L')
         pdf.output(my_path + "/static/Regression.pdf")
 
         return render_template("regressionOutput.html")
