@@ -20,11 +20,14 @@ def make_regression(file_name, column_names):
     my_model = smf.OLS(Y, X)
     res = my_model.fit()
 
-    text_file = open("Regression.txt", "w")
+    my_path = os.path.abspath(__file__)
+    # Remove "/generatePredictive.py" from file path
+    my_path = my_path[:-21]
+    text_file = open(my_path + "/static/Regression.txt", "w")
     text_file.write(res.summary().as_text())
     text_file.close()
     
-    return res.summary
+    return text_file
 
 # Generate predictive model based on model
 def make_predictive():
