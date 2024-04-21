@@ -19,8 +19,12 @@ def make_regression(file_name, column_names):
     Y, X = receipt_data[column_names[0]], receipt_data[column_names[0:]]
     my_model = smf.OLS(Y, X)
     res = my_model.fit()
+
+    text_file = open("Regression.txt", "w")
+    text_file.write(res.summary().as_text())
+    text_file.close()
     
-    return res.summary()
+    return res.summary
 
 # Generate predictive model based on model
 def make_predictive():
