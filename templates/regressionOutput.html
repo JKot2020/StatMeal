@@ -23,7 +23,9 @@
         <section>
             <article>
                 <p>Below is your regression analysis.</p><br>
-                <p>{{ output_regression }}</p>
+                {% for line in content %}
+                    <p>{{ line }}</p>
+                {% endfor %}
             </article>
         </section>
         <section>

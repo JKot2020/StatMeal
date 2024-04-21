@@ -45,7 +45,14 @@ def regression_output():
     if request.method == 'POST':
         file = request.form.get('file')
         columns = request.form.get('columns')
-        return render_template('regressionOutput.html', output_regression = make_regression(file, columns))
+        my_path = os.path.abspath(__file__)
+        # Remove "/server.py" from file path
+        my_path = my_path[:-9]
+        make_regression(file, columns)
+        with open(my_path + "/static/Regression.txt", "r") as f:
+            # read file line by line to maintain format
+            content = f.readlines()
+            return render_template("regressionOutput.html", content = content)
 
 if __name__ == '__main__':   
     app.run(debug=True)
