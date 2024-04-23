@@ -3,6 +3,7 @@
 
 from distutils.log import debug 
 from fileinput import filename 
+from fpdf import FPDF
 from flask import *
 from readFile import *
 from generateGraph import *
@@ -45,7 +46,23 @@ def regression_output():
     if request.method == 'POST':
         file = request.form.get('file')
         columns = request.form.get('columns')
-        return render_template('regressionOutput.html', output_regression = make_regression(file, columns))
+        make_regression(file, columns)
+
+        pdf = FPDF()   
+        pdf.add_page()
+        pdf.set_font("Arial", size = 15)
+        my_path = os.path.abspath(__file__)
+
+        # Remove "/server.py" from file path
+        my_path = my_path[:-9]
+
+        # generate pdf file format
+        f = open(my_path + "/static/Regression.txt", "r")
+        for x in f:
+            pdf.cell(200, 10, txt = x, ln = 1, align = 'L')
+        pdf.output(my_path + "/static/Regression.pdf")
+
+        return render_template("regressionOutput.html")
 
 if __name__ == '__main__':   
     app.run(debug=True)

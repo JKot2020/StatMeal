@@ -75,6 +75,7 @@ def make_hist(file_name, column_names, graph_name):
     # Clean plot beforehand
     plt.clf()
     my_hist = sns.histplot(receipt_data[column_names])
+    my_hist = plt.xlabel(column_names[0])
     my_hist = plt.xticks(rotation=45)
     my_hist = plt.tight_layout()
 
