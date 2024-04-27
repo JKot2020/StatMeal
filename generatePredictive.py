@@ -71,9 +71,9 @@ def make_predictive(file_name, column_names):
     my_predict_model = plt.scatter(X_test['combined_feat'], y_test, label='Actual Values')
     sorted_indices = X_test['combined_feat'].squeeze().argsort()
     plt.scatter(X_test['combined_feat'].iloc[sorted_indices], y_pred[sorted_indices], label='Predicted Values')
-    plt.title('Actual vs Predicted Grip Strength (Combined Personal Inventory)')
-    plt.xlabel('Combined Personal Inventory of All Means')
-    plt.ylabel('Grip Strength')
+    plt.title('Actual vs Predicted')
+    plt.xlabel('Combined Variables')
+    plt.ylabel(column_names[0])
     plt.legend()
     
     my_path = os.path.abspath(__file__)
