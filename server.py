@@ -50,7 +50,7 @@ def regression_output():
 
         pdf = FPDF()   
         pdf.add_page()
-        pdf.set_font("Arial", size = 15)
+        pdf.set_font("Arial", size = 10)
         my_path = os.path.abspath(__file__)
 
         # Remove "/server.py" from file path
