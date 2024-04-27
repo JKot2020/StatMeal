@@ -69,7 +69,7 @@ def predict_output():
     if request.method == 'POST':
         file = request.form.get('file')
         columns = request.form.get('columns')
-        return render_template('predictOutput.html', output_model = make_predictive(file, columns))
+        return render_template('predictOutput.html', print_mse = make_predictive(file, columns))
 
 if __name__ == '__main__':   
     app.run(debug=True)

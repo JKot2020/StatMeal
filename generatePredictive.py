@@ -61,9 +61,6 @@ def make_predictive(file_name, column_names):
     mse = mean_squared_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
 
-    print(f'MSE: {mse}')
-    print(f'R-squared: {r2 * 100}')
-
     # calculate mean for all means test set
     X_test['combined_feat'] = X_test[column_names[0:]].mean(axis=1)
 
@@ -84,4 +81,4 @@ def make_predictive(file_name, column_names):
     my_path = my_path[:-21]
     my_predict_model.figure.savefig(my_path + "/static/Predictive_Model.png")
 
-    return my_predict_model
+    return mse
