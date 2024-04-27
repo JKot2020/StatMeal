@@ -51,7 +51,7 @@ def make_predictive(file_name, column_names):
     # create model using the RandomForestRegressor model
     predict_model = RandomForestRegressor(n_estimators=100, max_depth=2, min_samples_split=3, min_samples_leaf=2, random_state=42)
 
-    # train the anx_model
+    # train the predict_model
     predict_model.fit(X_train, Y_train)
 
     # create predictions
