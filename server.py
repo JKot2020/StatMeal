@@ -50,7 +50,7 @@ def regression_output():
 
         pdf = FPDF()   
         pdf.add_page()
-        pdf.set_font("Arial", size = 15)
+        pdf.set_font("Arial", size = 10)
         my_path = os.path.abspath(__file__)
 
         # Remove "/server.py" from file path
@@ -63,6 +63,13 @@ def regression_output():
         pdf.output(my_path + "/static/Regression.pdf")
 
         return render_template("regressionOutput.html")
+
+@app.route('/predict-output', methods = ['POST'])
+def predict_output():
+    if request.method == 'POST':
+        file = request.form.get('file')
+        columns = request.form.get('columns')
+        return render_template('predictOutput.html', predict_data = make_predictive(file, columns))
 
 if __name__ == '__main__':   
     app.run(debug=True)
