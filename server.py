@@ -64,5 +64,12 @@ def regression_output():
 
         return render_template("regressionOutput.html")
 
+@app.route('/predict-output', methods = ['POST'])
+def predict_output():
+    if request.method == 'POST':
+        file = request.form.get('file')
+        columns = request.form.get('columns')
+        return render_template('predictOutput.html', output_model = make_predictive(file, columns))
+
 if __name__ == '__main__':   
     app.run(debug=True)
