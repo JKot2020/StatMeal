@@ -23,7 +23,8 @@
         <section>
             <article>
                 <p>Below is your Predictive Model.</p><br>
-                <p>Mean-Squared Error: {{ my_mse }}</p>
+                <p>R-Squared: {{ predict_data[1] }}</p>
+                <p>Mean-Squared Error: {{ predict_data[0] }}</p>
                 <img class="graph_image" id="final_output" src="/static/Predictive_Model.png" alt="Output" /><br>
                 <a href="/static/Predictive_Model.png" download="Output">
                     <button class="sm_nav_button" type="button" id="download_graph">Download PNG</button>

@@ -81,4 +81,4 @@ def make_predictive(file_name, column_names):
     my_path = my_path[:-21]
     my_predict_model.figure.savefig(my_path + "/static/Predictive_Model.png")
 
-    return mse
+    return [mse, r2]
