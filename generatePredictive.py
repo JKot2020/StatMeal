@@ -8,6 +8,9 @@ import matplotlib.pyplot as plt
 import scipy as sp
 import seaborn as sns
 import statsmodels.api as smf
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.ensemble import RandomForestRegressor
 from pylab import *
 
 # Generate regression model and return to web page
