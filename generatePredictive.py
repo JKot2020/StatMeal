@@ -39,42 +39,45 @@ def make_predictive(file_name, column_names):
 
     receipt_data = pd.read_csv(open(file_name, encoding="utf-8", errors='ignore'), keep_default_na=False)
 
-    # features and target for given model
-    features = receipt_data[column_names[0:]]
-    target = receipt_data[column_names[0]]
+    combined_features = column_names[0:]
+    target = column_names[0]
 
-    # Append target and feature variables
-    Y, X = receipt_data[target], receipt_data[features]
+    # seperate of features and target
+    X = receipt_data[combined_features]
+    y = receipt_data[target]
 
-    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-    # create model using the RandomForestRegressor model
-    predict_model = RandomForestRegressor(n_estimators=100, max_depth=2, min_samples_split=3, min_samples_leaf=2, random_state=42)
+    # create combined_model using the RandomForestRegressor model
+    combined_model = RandomForestRegressor(n_estimators=100, max_depth=2, min_samples_split=3, min_samples_leaf=2, random_state=42)
 
-    # train the predict_model
-    predict_model.fit(X_train, Y_train)
+    # train combined_model
+    combined_model.fit(X_train, y_train)
 
     # create predictions
-    Y_predict = predict_model.predict(X_test)
+    y_pred = combined_model.predict(X_test)
 
     # calculate MSE and r2 value
-    mse = mean_squared_error(Y_test, Y_predict)
-    r2 = r2_score(Y_test, Y_predict)
+    mse = mean_squared_error(y_test, y_pred)
+    r2 = r2_score(y_test, y_pred)
 
     print(f'MSE: {mse}')
     print(f'R-squared: {r2 * 100}')
 
+    # calculate mean for all means test set
+    X_test['combined_feat'] = X_test[column_names[0:]].mean(axis=1)
+
     # Clean plot beforehand
     plt.clf()
 
-    # generate scatter plot for actual vs predicted values
-    my_predict_model = plt.scatter(X_test[column_names[0:]], Y_test, label='Actual Values')
-    sorted_indices = X_test[column_names[0:]].squeeze().argsort()
-    my_predict_model = plt.scatter(X_test[column_names[0:]].iloc[sorted_indices], Y_predict[sorted_indices], label='Predicted Values')
-    my_predict_model = plt.title('Actual vs Predicted')
-    my_predict_model = plt.xlabel('Mean')
-    my_predict_model = plt.ylabel('Features')
-    my_predict_model = plt.legend()
+    # scatter plot for actual vs predicted grip strength for all means
+    my_predict_model = plt.scatter(X_test['combined_feat'], y_test, label='Actual Values')
+    sorted_indices = X_test['combined_feat'].squeeze().argsort()
+    plt.scatter(X_test['combined_feat'].iloc[sorted_indices], y_pred[sorted_indices], label='Predicted Values')
+    plt.title('Actual vs Predicted Grip Strength (Combined Personal Inventory)')
+    plt.xlabel('Combined Personal Inventory of All Means')
+    plt.ylabel('Grip Strength')
+    plt.legend()
     
     my_path = os.path.abspath(__file__)
     # Remove "/generatePredictive.py" from file path

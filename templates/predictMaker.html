@@ -27,7 +27,7 @@
                 {% for data_head in column %}
                    <button class="sm_name_button" id="column" value="{{ data_head }}" onclick="selectColumnName(this.value)">{{ data_head }}</button>
                 {% endfor %}
-                <br><br><form action = "/regression-output" method = "post" enctype="multipart/form-data">
+                <br><br><form action = "/predict-output" method = "post" enctype="multipart/form-data">
                   <input class="sm_nav_button" type="submit" value="Make Predictive Model"><br>
                   <p>Column Names<br>(Assume the first input represents the dependent variable, and every other variable afterwards represent independent variables)</p><br>
                   <textarea id="selected_name" name='columns'></textarea><br>
