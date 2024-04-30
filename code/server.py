@@ -68,6 +68,7 @@ def regression_output():
         f = open(my_path + "/static/Regression.txt", "r")
         for x in f:
             pdf.cell(200, 10, txt = x, ln = 1, align = 'L')
+        pdf.set_font('Roboto')
         pdf.output(my_path + "/static/Regression.pdf")
 
         return render_template("regressionOutput.html")
