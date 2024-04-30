@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>   
+    <head>   
+        <title>Predictive Model Maker</title>
+        <link type="text/css" rel="stylesheet" href="/static/statmeal.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>   
+    <body>
+        <div class="topnav" id="myTopnav">
+            <a href="home">Home</a>
+            <a href="graph-maker-landing">Graph Maker</a>
+            <a href="predict-maker-landing" class="active">Predictive Model Maker</a>
+            <a href="javascript:void(0);" class="icon" onclick="openNav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <h1>
+            StatMeal
+        </h1>
+        <p class="page_type">Regression Analysis Output</p>
+        <section>
+            <article>
+                <p>Below is your regression analysis.</p><br>
+                <object class="pdf" id="regression_output" data="/static/Regression.pdf" alt="Output"></object><br>
+            </article>
+        </section>
+        <section>
+            <footer>
+                <p>*Update*</p>
+            </footer>
+        </section>
+    </body>
+    <script>
+        function openNav() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
+</html>

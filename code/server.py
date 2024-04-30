@@ -18,6 +18,10 @@ def main():
 @app.route('/home')
 def home():   
     return render_template('statmeal.html')
+
+@app.route('/graph-maker-landing')
+def graph_landing():   
+    return render_template('graphMakerLanding.html')
   
 @app.route('/graph-maker', methods = ['POST'])   
 def graph():
@@ -33,6 +37,10 @@ def graph_output():
         columns = request.form.get('columns')
         graph = request.form.get('graph')
         return render_template('graphMakerOutput.html', output_graph = sort_graph_data(file, columns, graph), test_graph = graph)
+    
+@app.route('/predict-maker-landing')
+def predict_landing():
+    return render_template('predictMakerLanding.html')
     
 @app.route('/predict-maker', methods = ['POST'])   
 def predict():   
@@ -60,6 +68,7 @@ def regression_output():
         f = open(my_path + "/static/Regression.txt", "r")
         for x in f:
             pdf.cell(200, 10, txt = x, ln = 1, align = 'L')
+        pdf.set_font('Roboto')
         pdf.output(my_path + "/static/Regression.pdf")
 
         return render_template("regressionOutput.html")
