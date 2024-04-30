@@ -8,10 +8,10 @@
     </head>   
     <body>
         <div class="topnav" id="myTopnav">
-            <a href="home">Home</a>
+            <a href="home" class="active">Home</a>
             <a href="profile">Profile</a>
-            <a href="graph-maker-landing" class="active">Graph Maker</a>
-            <a href="predict-maker-landing">Predictive Model Maker</a>
+            <a href="graph-maker-landing">Graph Maker</a>
+            <a href="predict-maker-landing" class="active">Predictive Model Maker</a>
             <a href="javascript:void(0);" class="icon" onclick="openNav()">
                 <i class="fa fa-bars"></i>
             </a>
@@ -19,14 +19,15 @@
         <h1>
             StatMeal
         </h1>
-        <p class="page_type">Graph Maker Output</p>
+        <p class="page_type">Predictive Model Maker</p>
         <section>
             <article>
-                <p>Below is your {{ test_graph }}.</p><br>
-                <img class="graph_image" id="final_output" src="/static/output.png" alt="Output" /><br>
-                <a href="/static/output.png" download="Output">
-                    <button class="sm_nav_button" type="button" id="download_graph">Download PNG</button>
-                </a>
+                <p>Submit a data frame to create a predictive model.<br>The file must be in a .csv format.<br>Make sure it the file is organized in columns with the data type listed at the head of the column.</p>
+                <form action = "/predict-maker" method = "post" enctype="multipart/form-data">
+                    <p>Predictive Model Maker</p><br>
+                    <input class="sm_nav_button" type="file" name="file" />
+                    <input class="sm_nav_button" type="submit" value="Upload">
+                </form>
             </article>
         </section>
         <section>

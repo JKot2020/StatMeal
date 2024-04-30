@@ -38,6 +38,10 @@ def graph_output():
         graph = request.form.get('graph')
         return render_template('graphMakerOutput.html', output_graph = sort_graph_data(file, columns, graph), test_graph = graph)
     
+@app.route('/predict-maker-landing')
+def predict_landing():
+    return render_template('predictMakerLanding.html')
+    
 @app.route('/predict-maker', methods = ['POST'])   
 def predict():   
     if request.method == 'POST':   
