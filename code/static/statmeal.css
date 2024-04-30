@@ -1,11 +1,10 @@
 body {
-    background-color:#34495E;
+    background-color:#252525;
     flex-direction: column;
-    width: 100vw;
+    width: auto;
 }
 .topnav {
     overflow: hidden;
-    background-color: #5D6D7E;
   }
   
   .topnav a {
@@ -20,7 +19,7 @@ body {
   }
   
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: #ABEBC6;
     color: black;
   }
   
