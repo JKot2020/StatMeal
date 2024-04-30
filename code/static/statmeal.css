@@ -158,6 +158,13 @@ article {
     font-size: 20px;
     color: white;
 }
+
+table {
+    color: white;
+    background-color: #474747;
+    border-collapse: collapse;
+}
+
 form {
     padding: 10px;
     color:white;

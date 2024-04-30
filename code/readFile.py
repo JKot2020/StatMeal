@@ -20,7 +20,12 @@ def load_data(file_name):
     my_path = os.path.abspath(__file__)
     # Remove "/readFile.py" from file path
     my_path = my_path[:-12]
-    receipt_data.head().to_html(my_path + "/static/head.html")
+    # output head to separate html doc
+    f = open(my_path + "/static/head.html", "w")
+    f.write('<link type="text/css" rel="stylesheet" href="/static/statmeal.css" >')
+    f.write(receipt_data.head().to_html())
+    f.close()
+
     column_names = {"columns": receipt_data.columns}
 
     return column_names["columns"]
