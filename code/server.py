@@ -18,6 +18,10 @@ def main():
 @app.route('/home')
 def home():   
     return render_template('statmeal.html')
+
+@app.route('/graph-maker-landing')
+def graph_landing():   
+    return render_template('graphMakerLanding.html')
   
 @app.route('/graph-maker', methods = ['POST'])   
 def graph():
