@@ -28,12 +28,8 @@
                 <a href="/static/Predictive_Model.png" download="Output">
                     <button class="sm_nav_button" type="button" id="download_graph">Download PNG</button>
                 </a>
+                <button class="sm_nav_button" type="button" onclick="history.back()">Make New Predictive Model</button>
             </article>
-        </section>
-        <section>
-            <footer>
-                <p>*Update*</p>
-            </footer>
         </section>
     </body>
     <script>
@@ -44,6 +40,11 @@
           } else {
             x.className = "topnav";
           }
+        }
+        onload=function(){
+            var e=document.getElementById("refreshed");
+            if(e.value=="no")e.value="yes";
+            else{e.value="no";location.reload();}
         }
     </script>
 </html>

@@ -27,21 +27,16 @@
                 <p>Select a spreadsheet file to use for the graph maker.<br>The file must be in a .csv format.<br>Make sure it the file is organized in columns with the data type listed at the head of the column.</p>
                 <form action = "/graph-maker" method = "post" enctype="multipart/form-data">
                     <p>Graph Maker</p><br>
-                    <input class="sm_nav_button" type="file" name="file" />
+                    <input class="sm_nav_button" type="file" name="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
                     <input class="sm_nav_button" type="submit" value="Upload">
                 </form>
                 <p>Alternatively, you can submit a data frame to create a predictive model.</p>
                 <form action = "/predict-maker" method = "post" enctype="multipart/form-data">
                     <p>Predictive Model Maker</p><br>
-                    <input class="sm_nav_button" type="file" name="file" />
+                    <input class="sm_nav_button" type="file" name="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
                     <input class="sm_nav_button" type="submit" value="Upload">
                 </form>
             </article>
-        </section>
-        <section>
-            <footer>
-                <p>*Update*</p>
-            </footer>
         </section>
     </body>
     <script>
